@@ -1,8 +1,7 @@
 package com.swapnil.adsa1.algo;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import com.swapnil.adsa1.searcher.Searchable;
+import com.swapnil.adsa1.util.ArrayUtil;
 
 /**
  * Created by swapn on 05-10-2015.
@@ -13,26 +12,20 @@ public class BinarySearch extends Searchable {
 
     public static void main(String[] args) {
         Searchable searchable = new BinarySearch();
-        Integer[] input = {2, 0, 0, 2, 1, 4, 7, 0, 0, 4};
+        int[] input = {2, 0, 0, 2, 1, 4, 7, 0, 0, 4};
 
         searchable.search(input, 0);
     }
 
     @Override
-    public void search(Integer[] inputArray, int key) {
+    public void search(int[] inputArray, int key) {
         super.search(inputArray, key);
-
-        if (!isSorted) {
-            prerequisites();
-        }
 
         binarySearch(key);
     }
 
     private void prerequisites() {
-        List<Integer> list = Arrays.asList(inputArray);
-        Collections.sort(list);
-        inputArray = list.toArray(new Integer[list.size()]);
+    	ArrayUtil.quickSort(inputArray, 0, length - 1);
         isSorted = true;
     }
 

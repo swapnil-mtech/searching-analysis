@@ -1,5 +1,7 @@
 package com.swapnil.adsa1.algo;
 
+import com.swapnil.adsa1.searcher.Searchable;
+
 /**
  * Created by swapn on 05-10-2015.
  */
@@ -7,13 +9,13 @@ public class LinearSearch extends Searchable {
 
     public static void main(String[] args) {
         Searchable searchable = new LinearSearch();
-        Integer[] input = {2, 0, 0, 2, 1, 4, 7, 0, 0, 4};
+        int[] input = {2, 0, 0, 2, 1, 4, 7, 0, 0, 4};
 
         searchable.search(input, 2);
     }
 
     @Override
-    public void search(Integer[] inputArray, int key) {
+    public void search(int[] inputArray, int key) {
         super.search(inputArray, key);
 
         linearSearch(key);

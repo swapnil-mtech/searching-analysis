@@ -1,14 +1,14 @@
-package com.swapnil.adsa1.algo;
+package com.swapnil.adsa1.searcher;
 
 /**
  * Created by swapn on 05-10-2015.
  */
 public abstract class Searchable {
 
-    protected Integer[] inputArray;
-    protected Integer length;
+    protected int[] inputArray;
+    protected int length;
 
-    private void preSearch(Integer[] inputArray) {
+    private void preSearch(int[] inputArray) {
         if (inputArray == null || inputArray.length == 0) {
             System.err.println("Input Array is Empty");
             return;
@@ -17,7 +17,7 @@ public abstract class Searchable {
         this.length = inputArray.length;
     }
 
-    public void search(Integer[] inputArray, int key) {
+    public void search(int[] inputArray, int key) {
         preSearch(inputArray);
     }
 }
